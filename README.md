@@ -1,6 +1,6 @@
-# life-insight-counselor
+# Life Operating System
 
-A Codex skill for life and career guidance that combines:
+`life-insight-counselor` is a Codex skill for self-discovery, career strategy, and life guidance that combines:
 
 - evidence-oriented reflection
 - BaZi and Zi Wei Dou Shu
@@ -9,6 +9,10 @@ A Codex skill for life and career guidance that combines:
 
 This is not a fortune-telling prompt that throws mystical language at people.
 It is a structured counseling skill designed to help users think through career, relationships, repeated life patterns, and short-term decisions with both rational and symbolic lenses.
+
+## Suggested GitHub About text
+
+`A Codex skill for self-discovery, career strategy, and life guidance across behavioral reasoning, BaZi, Zi Wei Dou Shu, Western astrology, and HUMAN 3.0 style development mapping.`
 
 ## Source note
 
