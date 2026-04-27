@@ -1,0 +1,4 @@
+interface:
+  display_name: "Life Insight Counselor"
+  short_description: "Integrated life guidance across rational and symbolic lenses"
+  default_prompt: "Use $life-insight-counselor to help me think through a life question with both evidence-oriented and symbolic guidance."
