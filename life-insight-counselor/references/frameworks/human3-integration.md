@@ -2,6 +2,14 @@
 
 Use this file when the consultation should explicitly incorporate the development logic inspired by Dan Koe's HUMAN 3.0 prompt. Keep the language practical and adapted to this skill's style rather than copying the source's marketing tone.
 
+## Source
+
+Primary inspiration:
+
+- Dan Koe, [Prompt: HUMAN 3.0 - Self-Discovery and Transformation Through AI](https://letters.thedankoe.com/p/prompt-human-30-self-discovery-and)
+
+This file does not reproduce the original prompt verbatim. It adapts selected ideas into a counseling-oriented framework that works alongside behavioral reasoning, Chinese metaphysical systems, and Western astrology.
+
 ## What To Borrow
 
 This skill should borrow five useful ideas from HUMAN 3.0:
@@ -192,4 +200,3 @@ Then continue with:
 - Do not label users with archetypes unless it truly helps.
 - Do not use HUMAN 3.0 jargon as a substitute for real analysis.
 - If the model adds noise, keep only the parts that sharpen the reading.
-

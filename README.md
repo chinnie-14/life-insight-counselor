@@ -10,6 +10,15 @@ A Codex skill for life and career guidance that combines:
 This is not a fortune-telling prompt that throws mystical language at people.
 It is a structured counseling skill designed to help users think through career, relationships, repeated life patterns, and short-term decisions with both rational and symbolic lenses.
 
+## Source note
+
+The development-mapping layer in this skill is partly inspired by Dan Koe's HUMAN 3.0 prompt:
+
+- [Prompt: HUMAN 3.0 - Self-Discovery and Transformation Through AI](https://letters.thedankoe.com/p/prompt-human-30-self-discovery-and)
+
+That source influenced the four-domain framing, stage logic, and the idea of AI as an accelerant across life domains.
+This repository adapts those ideas into a more structured counseling workflow with explicit uncertainty handling, evidence transparency, and integration with Chinese metaphysical systems plus Western astrology.
+
 ## Why this exists
 
 Most prompts in this space fall into one of two extremes:
