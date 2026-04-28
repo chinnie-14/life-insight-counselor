@@ -14,6 +14,14 @@ It is a structured counseling skill designed to help users think through career,
 
 `A Codex skill for self-discovery, career strategy, and life guidance across behavioral reasoning, BaZi, Zi Wei Dou Shu, Western astrology, and HUMAN 3.0 style development mapping.`
 
+## Companion skill
+
+This repository now also includes a dedicated Zi Wei Dou Shu calculation skill:
+
+- [ziwei-chart-reader](./ziwei-chart-reader/SKILL.md)
+
+It wraps the open-source `iztro` library so the broader counseling skill can rely on computed palace and horoscope data instead of screenshots alone.
+
 ## Source note
 
 The development-mapping layer in this skill is partly inspired by Dan Koe's HUMAN 3.0 prompt:
@@ -124,6 +132,14 @@ life-insight-counselor/
         ├── event-strategy-example.md
         ├── relationship-example.md
         └── transparent-support-example.md
+ziwei-chart-reader/
+├── SKILL.md
+├── agents/openai.yaml
+├── references/interpretation-guide.md
+└── scripts/
+    ├── generate_ziwei_chart.mjs
+    ├── package.json
+    └── package-lock.json
 ```
 
 ## Quick start

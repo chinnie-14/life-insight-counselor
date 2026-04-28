@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ziwei Chart Reader"
+  short_description: "Generate and read Zi Wei Dou Shu chart structures"
+  default_prompt: "Use $ziwei-chart-reader to compute and summarize a Zi Wei Dou Shu chart from birth data."
+

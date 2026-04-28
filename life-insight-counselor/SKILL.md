@@ -15,6 +15,8 @@ This skill helps Codex act like a structured life counselor rather than a fortun
 
 It can also integrate a development-mapping layer inspired by HUMAN 3.0 when the user's question involves identity transition, recurring life bottlenecks, or career evolution across multiple life domains.
 
+When exact Zi Wei Dou Shu computation is needed and `$ziwei-chart-reader` is available, use it first to generate palace and horoscope data before interpreting.
+
 Use this skill to turn a user's life question into a balanced consultation that is insightful, bounded, and actionable.
 
 ## Operating Stance
@@ -69,6 +71,7 @@ At minimum, try to establish:
 If you need domain-specific framing while writing:
 
 - read [human3-integration.md](references/frameworks/human3-integration.md) when the user's issue would benefit from a four-domain development map
+- use `$ziwei-chart-reader` when the user needs exact Zi Wei palace/star support instead of screenshot-only interpretation
 - read [science-lens.md](references/frameworks/science-lens.md) for evidence-oriented interpretation rules
 - read [chinese-symbolic-lens.md](references/frameworks/chinese-symbolic-lens.md) for BaZi and Zi Wei Dou Shu guidance
 - read [western-symbolic-lens.md](references/frameworks/western-symbolic-lens.md) for natal-chart guidance

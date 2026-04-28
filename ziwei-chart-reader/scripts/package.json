@@ -1,0 +1,20 @@
+{
+  "name": "ziwei-chart-reader-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "generate_ziwei_chart.mjs",
+  "scripts": {
+    "chart": "node generate_ziwei_chart.mjs"
+  },
+  "keywords": [
+    "ziwei",
+    "ziwei-doushu",
+    "astrology",
+    "codex-skill"
+  ],
+  "license": "MIT",
+  "description": "Helper scripts for the ziwei-chart-reader Codex skill.",
+  "dependencies": {
+    "iztro": "^2.5.8"
+  }
+}
