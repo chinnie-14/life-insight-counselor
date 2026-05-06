@@ -36,6 +36,14 @@ When the user asks whether a year is stable or restructuring:
 - read yearly `官禄` and `迁移` mapping when available
 - read `财帛` to check whether money follows position, mobility, or opportunism
 
+The script's `annualFocus` block should be treated as a first-pass summary:
+
+- it tells you where yearly `官禄`, `财帛`, and `迁移` fall in the natal chart
+- it names the natal stars involved
+- it gives a short practical interpretation seed
+
+Use it as the starting layer, then expand with the user's real-life context.
+
 ## Useful Translation Style
 
 Avoid just naming stars. Translate them.
@@ -54,4 +62,3 @@ Better:
 - Do not pretend yearly movement overrides real life constraints
 - If palace structure and lived reality diverge, say so
 - Use chart support as structured evidence, not cosmic certainty
-

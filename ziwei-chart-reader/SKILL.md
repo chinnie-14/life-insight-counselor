@@ -14,6 +14,7 @@ Use it when the user needs:
 - a Zi Wei Dou Shu chart generated from birth data
 - palace and star support for a conclusion
 - yearly or decadal palace movement
+- automatic yearly focus summaries for `官禄`, `财帛`, and `迁移`
 - a transparent bridge between raw chart output and practical interpretation
 
 ## Source
@@ -134,6 +135,7 @@ The script returns JSON with:
 - five-elements class
 - key palace summaries
 - optional yearly and decadal summary for a target date
+- automatic `annualFocus` summaries for yearly career, wealth, and travel/environment movement
 
 ## Best Pairing
 
@@ -144,4 +146,3 @@ Use this skill first when:
 - the user asks for exact Zi Wei support
 - the user wants palace-level evidence
 - screenshots are unavailable or should be replaced with computed data
-

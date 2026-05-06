@@ -2,6 +2,38 @@
 
 import iztro from "iztro";
 
+const STAR_KEYWORDS = {
+  廉贞: "重组、边界、欲望与权责",
+  破军: "破旧立新、拆解旧结构、强变化",
+  武曲: "结果、资源、执行、硬实力",
+  贪狼: "机会、跨界、资源整合、变化驱动",
+  紫微: "位置、统筹、抬升、主导感",
+  七杀: "压力、速度、风险与突破",
+  天相: "平台、秩序、协作、外部承接",
+  天机: "判断、策略、变化、系统思考",
+  天梁: "责任、保护、压力承接",
+  天同: "缓冲、舒展、关系感受",
+  太阴: "积累、内在资源、稳定性",
+  太阳: "外显、被看见、承担",
+  巨门: "争议、表达、是非与辨析",
+  天府: "储备、稳定、保有",
+};
+
+const PALACE_FOCUS = {
+  命宫: "个人状态、身份感、主动性",
+  兄弟: "同级协作、人际配合、资源分流",
+  父母: "上级、制度、支持与约束",
+  福德: "精神储备、恢复力、内在消耗",
+  田宅: "内部根基、稳定盘、资源归属",
+  官禄: "事业角色、职位、工作方式",
+  仆役: "团队、协作、下游资源",
+  迁移: "外部平台、环境变化、转岗与流动",
+  疾厄: "压力、健康、负荷、内耗点",
+  财帛: "收入模式、钱跟着什么来",
+  子女: "产出、项目结果、延展线",
+  夫妻: "关系承诺、合作与绑定",
+};
+
 function parseArgs(argv) {
   const args = {};
   for (let i = 0; i < argv.length; i += 1) {
@@ -66,6 +98,74 @@ function palaceSummary(chart, name) {
   };
 }
 
+function describeStars(starNames) {
+  return starNames
+    .map((name) => STAR_KEYWORDS[name])
+    .filter(Boolean)
+    .slice(0, 3);
+}
+
+function annualPalaceFocus(chart, horoscope, palaceName) {
+  const yearlyIndex = horoscope.yearly.palaceNames.indexOf(palaceName);
+  if (yearlyIndex < 0) return null;
+
+  const natalPalace = chart.palaces[yearlyIndex];
+  const yearlyStars = horoscope.yearly.stars[yearlyIndex].map((s) => s.name);
+  const yearlyMutagenNames = horoscope.yearly.mutagen;
+  const natalMajor = natalPalace.majorStars.map((s) => s.name);
+  const natalMinor = natalPalace.minorStars.map((s) => s.name);
+  const headline = `流年${palaceName}落本命${natalPalace.name}`;
+
+  const summaryParts = [
+    `${headline}，主看${PALACE_FOCUS[natalPalace.name] || "该宫主题"}`,
+  ];
+
+  if (natalMajor.length > 0) {
+    summaryParts.push(`本命主星是${natalMajor.join("、")}`);
+  }
+  if (yearlyStars.length > 0) {
+    summaryParts.push(`本位流年附加星有${yearlyStars.join("、")}`);
+  }
+  if (yearlyMutagenNames.length > 0) {
+    summaryParts.push(`流年四化触发组为${yearlyMutagenNames.join("、")}`);
+  }
+
+  const interpretation = [];
+  if (natalMajor.length > 0) {
+    interpretation.push(...describeStars(natalMajor));
+  }
+  if (natalPalace.name === "疾厄") {
+    interpretation.push("推进常伴随压力、负荷和身心消耗，不能只看机会不看代价");
+  }
+  if (natalPalace.name === "兄弟") {
+    interpretation.push("财或机会更容易和同级协作、资源分流、团队关系绑定");
+  }
+  if (natalPalace.name === "子女") {
+    interpretation.push("外部变化更容易通过项目产出、结果呈现或新延展线体现");
+  }
+  if (palaceName === "官禄") {
+    interpretation.push("今年事业推进更像在压力与职责重排中发生，而不是纯稳定守成");
+  }
+  if (palaceName === "财帛") {
+    interpretation.push("今年的钱更像跟着协作结构、角色分工和资源配置走");
+  }
+  if (palaceName === "迁移") {
+    interpretation.push("今年外部平台和环境变化重要，但是否成势取决于能不能转成实质产出");
+  }
+
+  return {
+    palaceName,
+    yearlyFallsOnNatalPalace: natalPalace.name,
+    natalPalaceFocus: PALACE_FOCUS[natalPalace.name] || null,
+    natalMajorStars: natalMajor,
+    natalMinorStars: natalMinor,
+    yearlyStars,
+    yearlyMutagen: yearlyMutagenNames,
+    summary: summaryParts.join("；"),
+    interpretation,
+  };
+}
+
 function horoscopeSummary(chart, targetDate, targetTimeIndex) {
   if (!targetDate) return null;
   const h = chart.horoscope(targetDate, targetTimeIndex);
@@ -90,6 +190,11 @@ function horoscopeSummary(chart, targetDate, targetTimeIndex) {
       earthlyBranch: h.monthly.earthlyBranch,
       palaceNames: h.monthly.palaceNames,
       mutagen: h.monthly.mutagen,
+    },
+    annualFocus: {
+      career: annualPalaceFocus(chart, h, "官禄"),
+      wealth: annualPalaceFocus(chart, h, "财帛"),
+      travel: annualPalaceFocus(chart, h, "迁移"),
     },
   };
 }
@@ -164,4 +269,3 @@ try {
   console.error(error.message || String(error));
   process.exit(1);
 }
-
